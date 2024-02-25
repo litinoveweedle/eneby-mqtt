@@ -1,0 +1,21 @@
+[MQTT]
+TOPIC = speaker_living
+SERVER = 192.168.1.1
+PORT = 1883
+QOS = 1
+TIMEOUT = 5
+USER = mqttuser
+PASS = mqttpass
+
+[GPIO]
+#raspberry PINs
+POWER =  13
+VOL_UP = 6
+VOL_DW = 19
+BT_LED = 16
+AUX_LED = 12
+
+[SPEAKER]
+MAX_VOLUME = 30
+DEF_VOLUME = 15
+INIT_VOLUME = 25
