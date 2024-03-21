@@ -1,0 +1,11 @@
+[Unit]
+# Human readable name of the unit
+Description=Eneby Smart Speaker MQTT connector Fail Recovery service
+# Reboot on failure
+FailureAction=reboot
+
+[Service]
+Type=oneshot
+
+ExecStart=/home/pi/eneby/eneby-mqtt-recovery.sh
+

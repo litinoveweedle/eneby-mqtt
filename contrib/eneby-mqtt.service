@@ -4,9 +4,15 @@
 [Unit]
 # Human readable name of the unit
 Description=Eneby Smart Speaker MQTT connector
+
 # Start service after the network is up
 After=network-online.target
 Wants=network-online.target
+
+# Restart
+StartLimitIntervalSec=1800
+StartLimitBurst=5
+#OnFailure=eneby-mqtt-recovery.service
 
 
 
@@ -18,15 +24,22 @@ ExecStart=/home/pi/eneby-mqtt/eneby-mqtt.py
 
 WorkingDirectory=/home/pi/eneby-mqtt
 
+# Make sure the /run/eneby directory exists
+RuntimeDirectory=eneby
+RuntimeDirectoryMode=0777
+RuntimeDirectoryPreserve=yes
+
 # Disable Python's buffering of STDOUT and STDERR, so that output from the
 # service shows up immediately in systemd's logs
 Environment=PYTHONUNBUFFERED=1
 
 # Automatically restart the service if it crashes
 Restart=on-failure
+RestartSec=300s
 
 # Use a dedicated user to run our service
 User=pi
+Group=pi
 
 
 [Install]

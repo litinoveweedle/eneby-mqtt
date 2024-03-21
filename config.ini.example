@@ -19,3 +19,7 @@ AUX_LED = 12
 MAXIMUM = 40
 DEFAULT = 15
 INITIAL = 30
+
+[RUNTIME]
+MAX_ERROR = 15
+STATE_FILE = /run/eneby/eneby.lock
