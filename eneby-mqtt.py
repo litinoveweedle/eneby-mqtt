@@ -54,7 +54,7 @@ if 'RUNTIME' in config:
         if not config['RUNTIME'][key]:
             raise AppError("Missing or empty config entry RUNTIME/" + key)
 else:
-    raise AppError("Missing config section VOLUME")
+    raise AppError("Missing config section RUNTIME")
 
 
 def set_power(state):
