@@ -22,4 +22,4 @@ INITIAL = 30
 
 [RUNTIME]
 MAX_ERROR = 15
-STATE_FILE = /run/eneby/eneby.lock
+STATE_FILE = /run/eneby/eneby.state
